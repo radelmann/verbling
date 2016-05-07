@@ -22,5 +22,7 @@ export function hideModal() {
 }
 
 export function resetForm(formName) {
-  reset(formName);  
+  return function(dispatch) { 
+    dispatch(reset(formName));  
+  }
 }
