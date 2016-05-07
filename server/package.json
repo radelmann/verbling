@@ -1,18 +1,24 @@
 {
   "name": "verbling-challengeq-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Verbling Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "mocha spec/index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Verbling",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.1",
-    "express": "^4.13.3"
+    "chai": "^3.5.0",
+    "express": "^4.13.3",
+    "mocha": "^2.4.5",
+    "mongo-sanitize": "^1.0.0",
+    "mongoose": "^4.4.15",
+    "morgan": "^1.7.0",
+    "supertest": "^1.2.0"
   },
-  "description": "Verbling Challenge",
   "repository": "https://github.com/verbling/verbling-challenge"
 }
