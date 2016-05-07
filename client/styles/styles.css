@@ -2,8 +2,15 @@ body {
   height: 100vh;
 }
 
-.bold {
+.title {
   font-weight: 500;
+  font-size:18px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.message {
+  color:#8d8a86;
 }
 
 .container {
@@ -17,7 +24,6 @@ body {
 }
 
 .comments {
-  margin:5px;
 }
 
 .comment {
@@ -31,9 +37,9 @@ body {
 
 .minimized {
   height:50px;
+  max-width:480px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .form {
@@ -48,6 +54,10 @@ body {
 
 .btn {
   margin-right: 5px;
+}
+
+.btn-primary {
+  margin-right: 0px;
 }
 
 .submit {
