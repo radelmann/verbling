@@ -1,8 +1,3 @@
 export const POST_COMMENT  = 'post_comment';
-
-export function postComment(comment) {
-  return {
-    type: POST_COMMENT,
-    payload: comment
-  };
-}
+export const SHOW_MODAL = 'show_modal';
+export const HIDE_MODAL = 'hide_modal';
