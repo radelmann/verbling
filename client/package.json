@@ -16,6 +16,7 @@
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-form": "^5.2.3",
+    "redux-logger": "^2.6.1",
     "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
