@@ -44,7 +44,7 @@ class CommentPost extends Component {
                   <textarea className="form-control" {...message} rows="5" placeholder="message"/>
                   { message.touched && message.error && <div className="error">{message.error}</div> }
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary submit">Submit</button>
             </form>
           </Modal>
         </div>
@@ -55,6 +55,10 @@ class CommentPost extends Component {
 
 function validate(values) {
   const errors = {};
+
+  if (!values.title) {
+    errors.title = 'Enter a title.';
+  }
 
   if (!values.message) {
     errors.message = 'Enter a message.';

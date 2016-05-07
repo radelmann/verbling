@@ -1,4 +1,158 @@
 body {
-  font-family: Lucida Console, Monaco5, monospace;
   height: 100vh;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.container {
+  max-width:500px;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.comments {
+  margin:5px;
+}
+
+.comment {
+  background-color: #FFF;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:5px;
+  border: #DDD thin solid;
+  border-radius: 5px;
+}
+
+.partial {
+  height:50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form {
+  margin-top: 5%;
+  padding: 5px;
+}
+
+.form-control {
+  margin-bottom:10px;
+  border:none;
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+.submit {
+  font-size: 20px;
+  width:100%;
+}
+
+.white {
+  color:#FFF;
+}
+
+.grey {
+  color:#8d8a86;
+}
+
+.message {
+  margin-top: 8px;
+}
+
+.modal-dialog {
+  max-width: 450px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body {
+  padding:10px;
+}
+
+.modal-footer {
+  padding:10px;
+  padding-top:0px;
+  border-top: none;
+}
+
+.form-group {
+  background-color: #FFF;
+  border:thin solid #FFF;
+  border-radius: 5px;
+}
+
+.fa-arrow-left {
+  font-size: 26px;
+}
+
+.error {
+  color:red;
+  text-align: left;
+  padding-left:5px;
+}
+
+ul {
+  padding-left:0px;
+  list-style-type: none;
+}
+
+.transparent {
+  background-color: transparent;
+  border:none;
+}
+
+.close-form-container {
+  max-width:375px;
+  margin-left:auto;
+  margin-right:auto; 
+  text-align: right;
+  font-weight:500;
+}
+
+.post-form {
+  max-width:350px;
+  margin-left:auto;
+  margin-right:auto; 
+}
+
+.ReactModal__Overlay {
+  -webkit-perspective: 600;
+  perspective: 600;
+  opacity: 0;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transition: opacity 250ms ease-out;
+}
+
+.ReactModal__Content {
+  -webkit-transform: scale(0.5) rotateX(-30deg);
+  transform: scale(0.5) rotateX(-30deg);
+}
+
+.ReactModal__Content--after-open {
+  -webkit-transform: scale(1) rotateX(0deg);
+  transform: scale(1) rotateX(0deg);
+  transition: all 250ms ease-in;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content--before-close {
+  -webkit-transform: scale(0.5) rotateX(30deg);
+  transform: scale(0.5) rotateX(30deg);
+  transition: all 150ms ease-in;
 }

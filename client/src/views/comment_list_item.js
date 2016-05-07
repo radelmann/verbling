@@ -5,8 +5,8 @@ export default class CommentListItem extends Component {
   render() {
     const { title, message } = this.props;
     return (
-      <li>
-        <div>{title}</div>
+      <li className="comment" onClick={this.onClick.bind(this)}>
+        <div className="bold">{title}</div>
         <div>{message}</div>
       </li>
     );
