@@ -25,7 +25,7 @@ class CommentPost extends Component {
   }
 
   render() {
-    const { fields: {message}, handleSubmit, modal } = this.props;
+    const { fields: {title, message}, handleSubmit, modal } = this.props;
 
     return (
       <div>
@@ -39,7 +39,9 @@ class CommentPost extends Component {
             </div> 
             <form className="post-form" onSubmit={ handleSubmit(this.onSubmit.bind(this)) }>
                 <div className="form-group">
-                  <textarea className="form-control" {...message} rows="5" placeholder="what do you want to say?"/>
+                  <input className="form-control" {...title} placeholder="title"/>
+                  { title.touched && title.error && <div className="error">{title.error}</div> }
+                  <textarea className="form-control" {...message} rows="5" placeholder="message"/>
                   { message.touched && message.error && <div className="error">{message.error}</div> }
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
@@ -67,6 +69,6 @@ function mapStateToProps(state) {
 
 export default reduxForm({
   form: 'CommentPostForm',
-  fields: ['message'],
+  fields: ['message', 'title'],
   validate,
 },mapStateToProps,{postComment, resetForm, hideModal})(CommentPost);
