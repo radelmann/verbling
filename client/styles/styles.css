@@ -2,13 +2,6 @@ body {
   height: 100vh;
 }
 
-.title {
-  font-weight: 500;
-  font-size:18px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-}
-
 .message {
   color:#8d8a86;
 }
@@ -49,7 +42,6 @@ body {
 
 .form-control {
   margin-bottom:10px;
-  border:none;
 }
 
 .btn {
