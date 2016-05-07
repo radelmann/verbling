@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import CommentReducer from './comment_reducer'
+import { reducer as form } from 'redux-form';
+import CommentReducer from './comment_reducer';
+import ModalReducer from './modal_reducer';
 
 const rootReducer = combineReducers({
-  comments: CommentReducer  
+  form,
+  comments: CommentReducer,
+  modal: ModalReducer
 });
 
 export default rootReducer;
