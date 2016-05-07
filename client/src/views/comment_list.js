@@ -9,11 +9,11 @@ class CommentList extends Component {
   }
 
   renderList() {
-    const { display, comments } = this.props;
+    const { comments } = this.props;
 
-    return comments.map((comment, i) => {
+    return comments.map((comment) => {
       return (
-        <CommentListItem display={display} {...comment} key={i} />
+        <CommentListItem {...comment} key={comment._id} />
       );
     })
   }
@@ -31,8 +31,7 @@ class CommentList extends Component {
 
 function mapStateToProps(state) {
   return {
-    comments: state.comments,
-    display: state.display
+    comments: state.comments
   };
 }
 
