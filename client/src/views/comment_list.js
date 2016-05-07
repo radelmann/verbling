@@ -8,10 +8,21 @@ class CommentList extends Component {
     this.props.fetchComments();  
   }
 
-  renderList() {
-    const { comments } = this.props;
+  filter(comments, searchTerm) {
+    if (searchTerm !== '') {
+      searchTerm = searchTerm.toLowerCase();
+      return comments.filter(comment => {
+        return (
+          comment.title.toLowerCase().includes(searchTerm) ||
+          comment.message.toLowerCase().includes(searchTerm)
+          );  
+      });
+    }
+    return comments;
+  }
 
-    return comments.map((comment) => {
+  renderList(comments) {
+    return comments.map(comment => {
       return (
         <CommentListItem {...comment} key={comment._id} />
       );
@@ -19,10 +30,13 @@ class CommentList extends Component {
   }
 
   render() {
+    const {comments, searchTerm} = this.props;
+    const filteredComments = this.filter(comments, searchTerm);
+
     return (
       <div>
         <ul className="comments">
-          {this.renderList()}
+          {this.renderList(filteredComments)}
         </ul>
       </div>
     );
@@ -31,7 +45,8 @@ class CommentList extends Component {
 
 function mapStateToProps(state) {
   return {
-    comments: state.comments
+    comments: state.comments,
+    searchTerm: state.searchTerm
   };
 }
 
