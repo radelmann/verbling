@@ -10,7 +10,7 @@ class Buttons extends Component {
   render() {
     return (
       <div>
-        <button className="compose-button" onClick={this.openModal.bind(this)}>new</button>        
+        <button onClick={this.openModal.bind(this)}>new</button>        
       </div>
     );
   }
