@@ -1,11 +1,31 @@
-import { SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, POST_COMMENT, SHOW_MODAL, HIDE_MODAL } from './types';
+import axios from 'axios';
+import { SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, FETCH_COMMENTS, POST_COMMENT, SHOW_MODAL, HIDE_MODAL } from './types';
 import { reset } from 'redux-form';
 
-export function postComment(comment) {
-  return {
-    type: POST_COMMENT,
-    payload: comment
-  };
+const ROOT_URL = 'http://localhost:3000';
+
+export function fetchComments() {
+  return function(dispatch) { 
+    axios.get(`${ROOT_URL}/comment`)
+    .then(response => {
+      dispatch({
+        type: FETCH_COMMENTS,
+        payload: response.data.data
+      });
+    });
+  }
+}
+
+export function postComment({ title, message }) {
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/comment`,{ title, message })
+    .then(response => {
+      dispatch({
+        type: POST_COMMENT,
+        payload: response.data
+      });
+    });
+  }
 }
 
 export function showModal() {
