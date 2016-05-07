@@ -4,9 +4,11 @@ import CommentListItem from './comment_list_item';
 
 class CommentList extends Component {
   renderList() {
-    return this.props.comments.map((comment, i) => {
+    const { display, comments } = this.props;
+
+    return comments.map((comment, i) => {
       return (
-        <CommentListItem {...comment} key={i} />
+        <CommentListItem display={display} {...comment} key={i} />
       );
     })
   }
@@ -24,7 +26,8 @@ class CommentList extends Component {
 
 function mapStateToProps(state) {
   return {
-    comments: state.comments
+    comments: state.comments,
+    display: state.display
   };
 }
 
