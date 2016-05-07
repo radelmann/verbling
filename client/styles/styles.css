@@ -29,7 +29,7 @@ body {
   border-radius: 5px;
 }
 
-.partial {
+.minimized {
   height:50px;
   white-space: nowrap;
   overflow: hidden;
@@ -89,10 +89,6 @@ body {
   background-color: #FFF;
   border:thin solid #FFF;
   border-radius: 5px;
-}
-
-.fa-arrow-left {
-  font-size: 26px;
 }
 
 .error {
