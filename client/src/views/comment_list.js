@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchComments } from '../actions';
 import CommentListItem from './comment_list_item';
 
 class CommentList extends Component {
+  componentWillMount() {
+    this.props.fetchComments();  
+  }
+
   renderList() {
     const { display, comments } = this.props;
 
@@ -31,4 +36,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps,null)(CommentList);
+export default connect(mapStateToProps,{ fetchComments })(CommentList);
