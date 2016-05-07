@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { showModal, resetForm } from '../actions/index';
+import { showModal, resetForm, showAll, minimizeAll, toggleAll } from '../actions/index';
 
 class Buttons extends Component {
   openAll() {
-    console.log('open all');
+    this.props.showAll();
   }
   closeAll(){
-    console.log('close all');
+    this.props.minimizeAll();  
   }
   toggleAll(){
-    console.log('toggle all');
+    this.props.toggleAll(); 
   }
   openModal() {
     this.props.resetForm('CommentPostForm');
@@ -28,4 +28,4 @@ class Buttons extends Component {
   }
 }
 
-export default connect(null, { showModal, resetForm })(Buttons);
+export default connect(null, { showModal, resetForm, showAll, minimizeAll,toggleAll })(Buttons);
