@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, TOGGLE_COMMENT, FETCH_COMMENTS, POST_COMMENT, SHOW_MODAL, HIDE_MODAL } from './types';
+import { SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, TOGGLE_COMMENT, FETCH_COMMENTS, POST_COMMENT, SHOW_MODAL, HIDE_MODAL, SET_SEARCH_TERM } from './types';
 import { reset } from 'redux-form';
 
 const ROOT_URL = 'http://localhost:3000';
@@ -67,6 +67,13 @@ export function toggleAll() {
 export function toggleComment(payload) {
   return {
     type: TOGGLE_COMMENT,
-    payload: payload
+    payload
   }
+}
+
+export function setSearchTerm(payload) {
+  return {
+    type: SET_SEARCH_TERM,
+    payload
+  };
 }
