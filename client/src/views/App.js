@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import CommentList from './Comment_list';
 
 export default class App extends Component {
   render() {
-    return <div>Start here!</div>;
+    return (
+      <div>
+        <CommentList></CommentList>
+      </div>
+    );
   }
 }
