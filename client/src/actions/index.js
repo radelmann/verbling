@@ -2,7 +2,6 @@ import { POST_COMMENT, SHOW_MODAL, HIDE_MODAL } from './types';
 import { reset } from 'redux-form';
 
 export function postComment(comment) {
-  console.log(comment);
   return {
     type: POST_COMMENT,
     payload: comment
