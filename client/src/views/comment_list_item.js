@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL } from '../actions/types';
+import { toggleComment } from '../actions/';
 
-export default class CommentListItem extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { minimized : false };
-  }
-
+class CommentListItem extends Component {
   toggle() {
-    this.setState({ minimized : !this.state.minimized });
+    const id = this.props._id;
+    this.props.toggleComment({id});
   }
 
-  getClassName() {
-    return 'comment ' + ((this.state.minimized) ? 'minimized' : '');     
+  getClassName(minimized) {
+    return 'comment ' + (minimized ? 'minimized' : '');     
   }
-
+  
   render() {
-    const { title, message, display } = this.props;
-    const className = this.getClassName();
- 
+    const { title, message, minimized } = this.props;
+    const className = this.getClassName(minimized);
+
     return (
       <li className={className} onClick={this.toggle.bind(this)}>
         <div className="title">{title}</div>
@@ -28,8 +23,6 @@ export default class CommentListItem extends Component {
       </li>
     );
   }
-
-  componentDidMount(){
-    this.setState({ override : false });
-  }
 }
+
+export default connect(null, { toggleComment })(CommentListItem);
