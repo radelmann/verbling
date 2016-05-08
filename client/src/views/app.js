@@ -8,6 +8,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
+        <h1>Verbling Challenge</h1>
         <SearchBar></SearchBar>
         <CommentList></CommentList>
         <CommentPost></CommentPost>
