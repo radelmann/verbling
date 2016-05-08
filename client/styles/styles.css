@@ -4,7 +4,8 @@ body {
 
 i {
   padding-top: 2px;
-  padding-left:4px;
+  flex:1;
+  text-align: right;
 }
 
 ul {
@@ -18,13 +19,15 @@ li {
   margin-top:10px;
   border: #DDD thin solid;
   border-radius: 5px;
-  display: inline-flex;
+  display: flex;
 }
 
 .container {
-  max-width:500px;
+  width:400px;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
+  padding-left:0;
+  padding-right:0;
 }
 
 .form-control {
@@ -40,12 +43,11 @@ li {
 }
 
 .comments {
-  height:400px;
+  height: 400px;
   overflow: auto;
 }
 
 .comment {
-  width:400px;
   background-color: #FFF;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -58,6 +60,7 @@ li {
   text-overflow: ellipsis;
   padding-top: 12px;
   padding-bottom: 12px;
+  min-width: 0;
 }
 
 .btn {
