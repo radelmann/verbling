@@ -14,15 +14,11 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <input 
-            placeholder="search by title or message" 
-            className="form-control" 
-            type="text" 
-            onChange={ this.setSearchTerm.bind(this) }/>  
-        </div>
-      </div>
+      <input 
+        placeholder="search by title or message" 
+        className="form-control" 
+        type="text" 
+        onChange={ this.setSearchTerm.bind(this) }/>  
     );
   }
 }
