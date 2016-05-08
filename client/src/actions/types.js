@@ -7,3 +7,4 @@ export const POST_COMMENT  = 'post_comment';
 export const SHOW_MODAL = 'show_modal';
 export const HIDE_MODAL = 'hide_modal';
 export const SET_SEARCH_TERM = 'set_search_term';
+export const CLEAR_SEARCH_TERM = 'clear_search_term';

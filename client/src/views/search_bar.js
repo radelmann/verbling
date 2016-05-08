@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { setSearchTerm } from  '../actions/';
+import { setSearchTerm, clearSearchTerm } from  '../actions/';
 
 class SearchBar extends Component {
   componentWillUnmount() {
-    const searchTerm = '';
-    this.props.setSearchTerm({searchTerm});   
+    this.props.clearSearchTerm();   
   }
 
   setSearchTerm(e) {
@@ -28,4 +27,4 @@ class SearchBar extends Component {
   }
 }
 
-export default connect(null, { setSearchTerm })(SearchBar);
+export default connect(null, { setSearchTerm, clearSearchTerm })(SearchBar);
