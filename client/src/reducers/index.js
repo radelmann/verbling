@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
-import CommentReducer from './comment_reducer';
-import ModalReducer from './modal_reducer';
+import CommentReducer from './comments';
+import ModalReducer from './modal';
 import SearchTermReducer from './search_term';
 
 const rootReducer = combineReducers({
