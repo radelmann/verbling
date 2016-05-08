@@ -11,7 +11,7 @@ export default function(state = [], action) {
     case POST_COMMENT:
       //add minimized property,initialize to false
       action.payload.minimized = false;
-      return [ ...state, action.payload];
+      return [ action.payload, ...state];
     case SHOW_ALL:
       return state.map(comment => {
         comment.minimized=false; 
