@@ -4,8 +4,8 @@ import { toggleComment } from '../actions/';
 
 class CommentListItem extends Component {
   toggle() {
-    const id = this.props._id;
-    this.props.toggleComment({id});
+    const { _id } = this.props;
+    this.props.toggleComment({_id});
   }
 
   getClassName(minimized) {
