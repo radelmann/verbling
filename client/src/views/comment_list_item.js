@@ -12,14 +12,21 @@ class CommentListItem extends Component {
     return 'comment ' + (minimized ? 'minimized' : '');     
   }
   
+  getIconClassName(minimized) {
+    return 'fa ' + (minimized ? 'fa-arrow-circle-left' : 'fa-arrow-circle-down');     
+  }  
+
   render() {
     const { title, message, minimized } = this.props;
     const className = this.getClassName(minimized);
+    const iconClassName = this.getIconClassName(minimized);
 
     return (
-      <li className={className} onClick={this.toggle.bind(this)}>
-        <div className="title">{title}</div>
-        <div className="message">{message}</div>
+      <li onClick={this.toggle.bind(this)}>
+        <div className={className}>
+          <strong>{title}</strong> {message}
+        </div>
+        <i className={iconClassName} aria-hidden="true"></i>
       </li>
     );
   }
