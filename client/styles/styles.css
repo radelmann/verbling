@@ -22,7 +22,7 @@ li {
 }
 
 .container {
-  max-width:350px;
+  max-width:500px;
   margin-left: auto;
   margin-right:auto;
 }
@@ -45,10 +45,10 @@ li {
 }
 
 .comment {
-  width:200px;
+  width:400px;
   background-color: #FFF;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .minimized {
@@ -56,6 +56,8 @@ li {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .btn {
