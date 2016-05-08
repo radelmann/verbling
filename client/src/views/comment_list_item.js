@@ -16,6 +16,10 @@ class CommentListItem extends Component {
     return 'fa ' + (minimized ? 'fa-arrow-circle-left' : 'fa-arrow-circle-down');     
   }  
 
+  checkLineBreak(minimized) {
+    return minimized ? ' ' : <br/>;
+  }
+
   render() {
     const { title, message, minimized } = this.props;
     const className = this.getClassName(minimized);
@@ -24,7 +28,7 @@ class CommentListItem extends Component {
     return (
       <li onClick={this.toggle.bind(this)}>
         <div className={className}>
-          <strong>{title}</strong> {message}
+          <strong>{title}</strong>{this.checkLineBreak(minimized)}{message}
         </div>
         <i className={iconClassName} aria-hidden="true"></i>
       </li>
