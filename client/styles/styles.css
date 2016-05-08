@@ -2,46 +2,60 @@ body {
   height: 100vh;
 }
 
-.message {
-  color:#8d8a86;
+i {
+  padding-top: 2px;
+  padding-left:4px;
+}
+
+ul {
+  padding-left:0px;
+  list-style-type: none;
+}
+
+li { 
+  padding-left:5px;
+  padding-right:5px;
+  margin-top:10px;
+  border: #DDD thin solid;
+  border-radius: 5px;
+  display: inline-flex;
 }
 
 .container {
-  max-width:500px;
+  max-width:350px;
   margin-left: auto;
   margin-right:auto;
 }
 
-.center {
-  text-align: center;
+.form-control {
+  margin-bottom:10px;
+}
+
+.form-group {
+  background-color: #FFF;
+  border:thin solid #FFF;
+  border-radius: 5px;
+  background-color: ghostwhite;
+  padding:5px;
 }
 
 .comments {
+  height:200px;
+  overflow: auto;
 }
 
 .comment {
+  width:200px;
   background-color: #FFF;
-  margin-top:10px;
-  margin-bottom:10px;
-  padding:5px;
-  border: #DDD thin solid;
-  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .minimized {
-  height:50px;
-  max-width:480px;
+  height: 50px;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.form {
-  margin-top: 5%;
-  padding: 5px;
-}
-
-.form-control {
-  margin-bottom:10px;
+  text-overflow: ellipsis;
 }
 
 .btn {
@@ -54,19 +68,11 @@ body {
 
 .submit {
   font-size: 20px;
-  width:100%;
+  width: 100%;
 }
 
 .white {
   color:#FFF;
-}
-
-.grey {
-  color:#8d8a86;
-}
-
-.message {
-  margin-top: 8px;
 }
 
 .modal-dialog {
@@ -87,21 +93,10 @@ body {
   border-top: none;
 }
 
-.form-group {
-  background-color: #FFF;
-  border:thin solid #FFF;
-  border-radius: 5px;
-}
-
 .error {
   color:red;
   text-align: left;
   padding-left:5px;
-}
-
-ul {
-  padding-left:0px;
-  list-style-type: none;
 }
 
 .transparent {
