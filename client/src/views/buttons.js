@@ -19,10 +19,26 @@ class Buttons extends Component {
   render() {
     return (
       <div>
-        <button className="btn" onClick={this.openAll.bind(this)}>Open All</button>
-        <button className="btn" onClick={this.closeAll.bind(this)}>Close All</button>        
-        <button className="btn" onClick={this.toggleAll.bind(this)}>Toggle All</button>        
-        <button className="btn btn-primary pull-right" onClick={this.openModal.bind(this)}>New</button>        
+        <button 
+          className="btn" 
+          onClick={this.openAll.bind(this)}>
+          Open All
+        </button>
+        <button 
+          className="btn" 
+          onClick={this.closeAll.bind(this)}>
+          Close All
+        </button>        
+        <button 
+          className="btn" 
+          onClick={this.toggleAll.bind(this)}>
+          Toggle All
+        </button>        
+        <button 
+          className="btn btn-primary pull-right" 
+          onClick={this.openModal.bind(this)}>
+          New
+        </button>        
       </div>
     );
   }

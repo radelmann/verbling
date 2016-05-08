@@ -28,7 +28,4 @@ class SearchBar extends Component {
   }
 }
 
-export default connect(
-  null,
-  { setSearchTerm }
-)(SearchBar);
+export default connect(null, { setSearchTerm })(SearchBar);

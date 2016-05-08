@@ -8,14 +8,14 @@ class CommentList extends Component {
     this.props.fetchComments();  
   }
 
-  filter(comments, searchTerm) {
+  filterList(comments, searchTerm) {
     if (searchTerm !== '') {
       searchTerm = searchTerm.toLowerCase();
       return comments.filter(comment => {
         return (
           comment.title.toLowerCase().includes(searchTerm) ||
           comment.message.toLowerCase().includes(searchTerm)
-          );  
+        );  
       });
     }
     return comments;
@@ -31,22 +31,21 @@ class CommentList extends Component {
 
   render() {
     const {comments, searchTerm} = this.props;
-    const filteredComments = this.filter(comments, searchTerm);
-
+  
     return (
       <div>
         <ul className="comments">
-          {this.renderList(filteredComments)}
+          {this.renderList(this.filterList(comments, searchTerm))}
         </ul>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({comments, searchTerm}) {
   return {
-    comments: state.comments,
-    searchTerm: state.searchTerm
+    comments,
+    searchTerm
   };
 }
 

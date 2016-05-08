@@ -9,10 +9,10 @@ export default class App extends Component {
     return (
       <div className="container">
         <h1>Verbling Challenge</h1>
-        <SearchBar></SearchBar>
-        <CommentList></CommentList>
-        <CommentPost></CommentPost>
-        <Buttons></Buttons>
+        <SearchBar />
+        <CommentList />
+        <CommentPost />
+        <Buttons />
       </div>
     );
   }

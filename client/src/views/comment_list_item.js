@@ -28,7 +28,9 @@ class CommentListItem extends Component {
     return (
       <li onClick={this.toggle.bind(this)}>
         <div className={className}>
-          <strong>{title}</strong>{this.checkLineBreak(minimized)}{message}
+          <strong>{title}</strong>
+          {this.checkLineBreak(minimized)}
+          {message}
         </div>
         <i className={iconClassName} aria-hidden="true"></i>
       </li>

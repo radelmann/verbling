@@ -33,16 +33,33 @@ class CommentPost extends Component {
         onRequestClose={this.closeModal.bind(this)}
         style={customStyles} >
         <div className="close-form-container">
-          <button className="transparent align-right white" onClick={this.closeModal.bind(this)}>X</button>
+          <button 
+            className="transparent align-right white" 
+            onClick={this.closeModal.bind(this)}>
+            X
+          </button>
         </div> 
-        <form className="post-form" onSubmit={ handleSubmit(this.onSubmit.bind(this)) }>
+        <form 
+          className="post-form" 
+          onSubmit={ handleSubmit(this.onSubmit.bind(this)) }>
             <div className="form-group">
-              <input className="form-control" {...title} placeholder="title"/>
+              <input 
+                className="form-control" 
+                {...title} 
+                placeholder="title"/>
               { title.touched && title.error && <div className="error">{title.error}</div> }
-              <textarea className="form-control" {...message} rows="5" placeholder="message"/>
+              <textarea 
+                className="form-control" 
+                {...message} 
+                rows="5" 
+                placeholder="message"/>
               { message.touched && message.error && <div className="error">{message.error}</div> }
             </div>
-            <button type="submit" className="btn btn-primary submit">Submit</button>
+            <button 
+              type="submit" 
+              className="btn btn-primary submit">
+              Submit
+            </button>
         </form>
       </Modal>
     );
@@ -63,12 +80,12 @@ function validate(values) {
   return errors;
 }
 
-function mapStateToProps(state) {
-  return { modal: state.modal };
+function mapStateToProps({ modal }) {
+  return { modal };
 }
 
 export default reduxForm({
   form: 'CommentPostForm',
   fields: ['message', 'title'],
   validate,
-},mapStateToProps,{postComment, resetForm, hideModal})(CommentPost);
+}, mapStateToProps, {postComment, resetForm, hideModal})(CommentPost);
