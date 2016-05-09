@@ -1,4 +1,4 @@
-var Comment = require('./model');
+const Comment = require('./model');
 
 module.exports = {
   getAll: function(req, res, next) {
@@ -18,7 +18,7 @@ module.exports = {
   },
 
   post: function(req, res, next) {
-    var comment = new Comment({
+    const comment = new Comment({
       title: req.body.title,
       message: req.body.message
     });

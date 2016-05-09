@@ -1,10 +1,12 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var morgan = require('morgan');
-var mongoose = require('mongoose');
-var config = require('./config');
-var router = require('./router');
-var app = express();
+'use strict'
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const mongoose = require('mongoose');
+const config = require('./config');
+const router = require('./router');
+const app = express();
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
@@ -20,10 +22,10 @@ mongoose.connect(config.db_url);
 
 router(app);
 
-var server = app.listen(config.port, function () {
-  var host = this.address().address;
+const server = app.listen(config.port, function () {
+  let host = this.address().address;
   host === '::' ? host = 'localhost' : true;
-  var port = this.address().port;
+  const port = this.address().port;
 
   console.log(`Express server listening on http://${host}:${port}`);
 });

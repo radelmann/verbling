@@ -1,16 +1,17 @@
-var chai = require('chai');
-var expect = chai.expect;
-var request = require('supertest');
-var app = require('../index.js');
+'use strict'
+const chai = require('chai');
+const expect = chai.expect;
+const request = require('supertest');
+const app = require('../index.js');
 
-var _id;
+let _id;
 
 describe("API - Server - REST API Routes", function() {
 
   describe('POST /comment', function() {
     it('responds with a 200 (successful) and returned json object of new comment post', function(done) {
 
-      var data = {
+      const data = {
         title: 'this is the title',
         message: 'this is the message'
       };
@@ -41,7 +42,6 @@ describe("API - Server - REST API Routes", function() {
         .expect(200, done);
     });
   });
-
 
   describe('DELETE /comment', function() {
     it('responds with a 200 (successful)', function(done) {

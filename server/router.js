@@ -1,7 +1,7 @@
 const Comment = require('./comment/controller');
-var sanitize = require('mongo-sanitize');
+const sanitize = require('mongo-sanitize');
 
-var cleanInput = function(req, res, next) {
+const cleanInput = function(req, res, next) {
   req.body = sanitize(req.body);
   next();
 }
