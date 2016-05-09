@@ -1,4 +1,4 @@
-import { expect } from '../test_helper';  
+import { expect } from '../util';  
 import searchTermReducer from '../../src/reducers/search_term';
 import { SET_SEARCH_TERM, CLEAR_SEARCH_TERM } from '../../src/actions/types';
 

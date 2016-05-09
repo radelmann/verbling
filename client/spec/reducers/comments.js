@@ -1,4 +1,4 @@
-import { expect } from '../test_helper';  
+import { expect } from '../util';  
 import commentReducer from '../../src/reducers/comments';
 import { POST_COMMENT, FETCH_COMMENTS, SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, TOGGLE_COMMENT } from '../../src/actions/types';
 

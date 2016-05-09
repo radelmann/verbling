@@ -1,4 +1,4 @@
-import { expect } from '../test_helper';  
+import { expect } from '../util';  
 import modalReducer from '../../src/reducers/modal';
 import { SHOW_MODAL, HIDE_MODAL } from '../../src/actions/types';
 
