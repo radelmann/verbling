@@ -6,7 +6,7 @@ const ROOT_URL = 'http://localhost:3000';
 
 export function fetchComments() {
   return function(dispatch) { 
-    axios.get(`${ROOT_URL}/comment`)
+    return axios.get(`${ROOT_URL}/comment`)
     .then(response => {
       dispatch({
         type: FETCH_COMMENTS,
@@ -18,7 +18,7 @@ export function fetchComments() {
 
 export function postComment({ title, message }) {
   return function(dispatch) {
-    axios.post(`${ROOT_URL}/comment`,{ title, message })
+    return axios.post(`${ROOT_URL}/comment`,{ title, message })
     .then(response => {
       dispatch({
         type: POST_COMMENT,
