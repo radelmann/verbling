@@ -1,6 +1,6 @@
 import { expect } from '../util';  
 import commentReducer from '../../src/reducers/comments';
-import { POST_COMMENT, FETCH_COMMENTS, SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, TOGGLE_COMMENT } from '../../src/actions/types';
+import * as types from '../../src/actions/types';
 
 describe('Comments Reducer', () => {
   it('handles action with unknown type', () => {
@@ -19,7 +19,7 @@ describe('Comments Reducer', () => {
       { '_id':2, 'title': 'title 2', 'message':'message 2', 'minimized':false}
     ];
     
-    const action = {type: FETCH_COMMENTS, payload: payload};
+    const action = {type: types.FETCH_COMMENTS, payload: payload};
     expect(commentReducer([], action)).to.deep.eql(expected_result);                              
   });
 
@@ -27,7 +27,7 @@ describe('Comments Reducer', () => {
     const payload = { '_id':1, 'title': 'title 1', 'message':'message 1'};
     const expected_result = { '_id':1, 'title': 'title 1', 'message':'message 1', 'minimized': false};
 
-    const action = {type: POST_COMMENT, payload: payload};
+    const action = {type: types.POST_COMMENT, payload: payload};
     expect(commentReducer([], action)).to.deep.eql([expected_result]);                              
   });
 
@@ -44,7 +44,7 @@ describe('Comments Reducer', () => {
       { '_id':3, 'title': 'title 3', 'message':'message 3', 'minimized':false}
     ];
 
-    const action = {type: SHOW_ALL};
+    const action = {type: types.SHOW_ALL};
     expect(commentReducer(state, action)).to.deep.eql(expected_result);                              
   });
 
@@ -61,7 +61,7 @@ describe('Comments Reducer', () => {
       { '_id':3, 'title': 'title 3', 'message':'message 3', 'minimized':true}
     ];
 
-    const action = {type: MINIMIZE_ALL};
+    const action = {type: types.MINIMIZE_ALL};
     expect(commentReducer(state, action)).to.deep.eql(expected_result);                              
   });
 
@@ -78,7 +78,7 @@ describe('Comments Reducer', () => {
       { '_id':3, 'title': 'title 3', 'message':'message 3', 'minimized':true}
     ];
 
-    const action = {type: TOGGLE_ALL};
+    const action = {type: types.TOGGLE_ALL};
     expect(commentReducer(state, action)).to.deep.eql(expected_result);                              
   });
 
@@ -97,7 +97,7 @@ describe('Comments Reducer', () => {
       { '_id':3, 'title': 'title 3', 'message':'message 3', 'minimized':false}
     ];
 
-    const action = {type: TOGGLE_COMMENT, payload:payload};
+    const action = {type: types.TOGGLE_COMMENT, payload:payload};
     expect(commentReducer(state, action)).to.deep.eql(expected_result);                              
   });  
 });

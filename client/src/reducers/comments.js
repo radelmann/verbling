@@ -1,4 +1,4 @@
-import { FETCH_COMMENTS, POST_COMMENT, SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, TOGGLE_COMMENT } from '../actions/types';
+import * as types from '../actions/types';
 import { createReducer } from './utils';
 
 const setAll = (collection, props) =>
@@ -23,12 +23,12 @@ const toggle = (collection, prop, where) =>
 
 export default function(state = [], action) {
   const handlers = {
-    [FETCH_COMMENTS]: () => setAll(action.payload, {"minimized": false}),
-    [POST_COMMENT]: () => insert(state, action.payload, {"minimized": false}),
-    [SHOW_ALL]: () => setAll(state, {"minimized": false}),
-    [MINIMIZE_ALL]: () => setAll(state, {"minimized": true}),   
-    [TOGGLE_ALL]: () => toggle(state, "minimized"),
-    [TOGGLE_COMMENT]: () => toggle(state, "minimized", action.payload)   
+    [types.FETCH_COMMENTS]: () => setAll(action.payload, {"minimized": false}),
+    [types.POST_COMMENT]: () => insert(state, action.payload, {"minimized": false}),
+    [types.SHOW_ALL]: () => setAll(state, {"minimized": false}),
+    [types.MINIMIZE_ALL]: () => setAll(state, {"minimized": true}),   
+    [types.TOGGLE_ALL]: () => toggle(state, "minimized"),
+    [types.TOGGLE_COMMENT]: () => toggle(state, "minimized", action.payload)   
   }
   
   return createReducer(state, action, handlers);
