@@ -30,7 +30,7 @@ describe('async actions', () => {
     
     return store.dispatch(actions.fetchComments())
       .then(() => { // return of async actions
-          expect(store.getActions()).to.deep.equal(expectedActions)
+        expect(store.getActions()).to.deep.equal(expectedActions)
       })
     });
   });
@@ -57,8 +57,6 @@ describe('async actions', () => {
 });
 
 describe('actions', () => {
-  //todo post comment, fetch comments
-  
   describe('showAll', () => {
     it('has the correct type', () => {
       const action = actions.showAll();

@@ -1,7 +1,6 @@
 import { createSpy }  from 'expect';
 import { renderComponent, expect } from '../util';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
 import SearchBar from '../../src/views/search_bar';
 
 function setup() {
