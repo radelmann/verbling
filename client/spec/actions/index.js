@@ -1,6 +1,6 @@
 import { expect } from '../util';
-import { SHOW_ALL, MINIMIZE_ALL, TOGGLE_ALL, TOGGLE_COMMENT, FETCH_COMMENTS, POST_COMMENT, SHOW_MODAL, HIDE_MODAL, SET_SEARCH_TERM, CLEAR_SEARCH_TERM } from '../../src/actions/types';
-import { fetchComments, postComment, showAll, minimizeAll, toggleAll, toggleComment, setSearchTerm, clearSearchTerm } from '../../src/actions';
+import * as types from '../../src/actions/types';
+import * as actions from '../../src/actions';
 
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -23,12 +23,12 @@ describe('async actions', () => {
       .reply(200, { data: data})
 
     const expectedActions = [
-      { type: FETCH_COMMENTS, payload: data }
+      { type: types.FETCH_COMMENTS, payload: data }
     ];
 
     const store = mockStore({ comments: [] });
     
-    return store.dispatch(fetchComments())
+    return store.dispatch(actions.fetchComments())
       .then(() => { // return of async actions
           expect(store.getActions()).to.deep.equal(expectedActions)
       })
@@ -43,12 +43,12 @@ describe('async actions', () => {
       .reply(200, data);
 
     const expectedActions = [
-      { type: POST_COMMENT, payload:data}
+      { type: types.POST_COMMENT, payload:data}
     ];
 
     const store = mockStore({ comments: [] });
     
-    return store.dispatch(postComment(data))
+    return store.dispatch(actions.postComment(data))
       .then(() => {
           expect(store.getActions()).to.deep.equal(expectedActions)
       })
@@ -61,22 +61,22 @@ describe('actions', () => {
   
   describe('showAll', () => {
     it('has the correct type', () => {
-      const action = showAll();
-      expect(action.type).to.equal(SHOW_ALL);
+      const action = actions.showAll();
+      expect(action.type).to.equal(types.SHOW_ALL);
     });
   });
 
   describe('minimizeAll', () => {
     it('has the correct type', () => {
-      const action = minimizeAll();
-      expect(action.type).to.equal(MINIMIZE_ALL);
+      const action = actions.minimizeAll();
+      expect(action.type).to.equal(types.MINIMIZE_ALL);
     });
   });
 
   describe('toggleAll', () => {
     it('has the correct type', () => {
-      const action = toggleAll();
-      expect(action.type).to.equal(TOGGLE_ALL);
+      const action = actions.toggleAll();
+      expect(action.type).to.equal(types.TOGGLE_ALL);
     });
   });
 
@@ -84,12 +84,12 @@ describe('actions', () => {
     const payload = {'_id':1};
 
     it('has the correct type', () => {
-      const action = toggleComment(payload);
-      expect(action.type).to.equal(TOGGLE_COMMENT);
+      const action = actions.toggleComment(payload);
+      expect(action.type).to.equal(types.TOGGLE_COMMENT);
     });
 
     it('has the correct payload', () => {
-      const action = toggleComment(payload);
+      const action = actions.toggleComment(payload);
       expect(action.payload).to.equal(payload);
     });    
   });
@@ -98,20 +98,20 @@ describe('actions', () => {
     const payload = {'searchTerm':'test'};
 
     it('has the correct type', () => {
-      const action = setSearchTerm(payload);
-      expect(action.type).to.equal(SET_SEARCH_TERM);
+      const action = actions.setSearchTerm(payload);
+      expect(action.type).to.equal(types.SET_SEARCH_TERM);
     });
 
     it('has the correct payload', () => {
-      const action = setSearchTerm(payload);
+      const action = actions.setSearchTerm(payload);
       expect(action.payload).to.equal(payload);
     });    
   });
 
   describe('clearSearchTerm', () => {
     it('has the correct type', () => {
-      const action = clearSearchTerm();
-      expect(action.type).to.equal(CLEAR_SEARCH_TERM);
+      const action = actions.clearSearchTerm();
+      expect(action.type).to.equal(types.CLEAR_SEARCH_TERM);
     });
   });
 });
